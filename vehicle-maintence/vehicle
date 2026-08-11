@@ -1,0 +1,78 @@
+
+---
+
+# 💻 C Program (`maintenance_scheduler.c`)
+
+```c
+#include <stdio.h>
+
+int main() {
+    int current_km;
+    int oil_last, brake_last, air_last, coolant_last, battery_last;
+
+    printf("=== VEHICLE MAINTENANCE SCHEDULER ===\n\n");
+
+    printf("Enter current odometer (km): ");
+    scanf("%d", &current_km);
+
+    printf("Enter last Engine Oil service (km): ");
+    scanf("%d", &oil_last);
+
+    printf("Enter last Brake Inspection (km): ");
+    scanf("%d", &brake_last);
+
+    printf("Enter last Air Filter change (km): ");
+    scanf("%d", &air_last);
+
+    printf("Enter last Coolant service (km): ");
+    scanf("%d", &coolant_last);
+
+    printf("Enter last Battery check (km): ");
+    scanf("%d", &battery_last);
+
+    printf("\n===== SERVICE STATUS =====\n");
+
+    // Engine Oil (5000 km)
+    if (current_km - oil_last >= 5000)
+        printf("🔴 Engine Oil: SERVICE DUE\n");
+    else if (current_km - oil_last >= 4000)
+        printf("🟡 Engine Oil: DUE SOON\n");
+    else
+        printf("🟢 Engine Oil: OK\n");
+
+    // Brake (10000 km)
+    if (current_km - brake_last >= 10000)
+        printf("🔴 Brake Inspection: SERVICE DUE\n");
+    else if (current_km - brake_last >= 8000)
+        printf("🟡 Brake Inspection: DUE SOON\n");
+    else
+        printf("🟢 Brake Inspection: OK\n");
+
+    // Air Filter (15000 km)
+    if (current_km - air_last >= 15000)
+        printf("🔴 Air Filter: SERVICE DUE\n");
+    else if (current_km - air_last >= 13000)
+        printf("🟡 Air Filter: DUE SOON\n");
+    else
+        printf("🟢 Air Filter: OK\n");
+
+    // Coolant (30000 km)
+    if (current_km - coolant_last >= 30000)
+        printf("🔴 Coolant: SERVICE DUE\n");
+    else if (current_km - coolant_last >= 28000)
+        printf("🟡 Coolant: DUE SOON\n");
+    else
+        printf("🟢 Coolant: OK\n");
+
+    // Battery (20000 km)
+    if (current_km - battery_last >= 20000)
+        printf("🔴 Battery Check: SERVICE DUE\n");
+    else if (current_km - battery_last >= 18000)
+        printf("🟡 Battery Check: DUE SOON\n");
+    else
+        printf("🟢 Battery Check: OK\n");
+
+    printf("\nDrive Safe & Maintain Your Vehicle!\n");
+
+    return 0;
+}
